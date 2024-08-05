@@ -2,8 +2,6 @@
 
 from pathlib import Path
 
-from io import BytesIO
-
 from pydantic import computed_field
 
 
@@ -14,7 +12,7 @@ class PPTXModel(BasePaths):
     """Powerpoint model."""
 
     file_name: str
-    pptx: BytesIO
+    pptx: bytes
 
     @computed_field
     @property
@@ -26,4 +24,7 @@ class PPTXModel(BasePaths):
         """Write pptx."""
         # Save the file
         with open(str(self.pptx_file), "wb") as f:
-            f.write(self.pptx.getvalue())
+            f.write(self.pptx)
+
+    class Config:
+        arbitrary_types_allowed = True

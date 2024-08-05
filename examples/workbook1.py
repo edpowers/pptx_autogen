@@ -12,6 +12,8 @@ from pptgen.model.pptx_model import PPTXModel
 
 from pptgen.create_presentation import create_presentation
 
+from pptgen.model.common import BulletPoints, BulletPoint
+
 # %%
 
 
@@ -21,6 +23,15 @@ from pptgen.create_presentation import create_presentation
 base_paths = BasePaths()
 # Usage example:
 color_scheme = ThemeColorScheme(theme=ColorTheme.CHRISTMAS)
+
+# Define BulletPoints for the ContentSlide
+winter_facts = BulletPoints(
+    bullet_points=[
+        BulletPoint(text="Snow is white"),
+        BulletPoint(text="It's cold"),
+        BulletPoint(text="People build snowmen"),
+    ]
+)
 
 slides = [
     TitleSlide(title="Christmas Presentation", subtitle="Happy Holidays!"),
@@ -38,7 +49,7 @@ pptx_file = create_presentation(slides, color_scheme)
 
 
 pptx_file_christmas = PPTXModel(
-    file_name="Christmas_Presentation.pptx", pptx=pptx_file.get_value()
+    file_name="Christmas_Presentation.pptx", pptx=pptx_file.getvalue()
 )
 
 pptx_file_christmas.write_pptx()
