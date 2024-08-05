@@ -2,12 +2,17 @@
 
 from pydantic import BaseModel
 
+from typing import Union
+
+
+from pptgen.model.common import BulletPoints
+
 
 class ContentSlide(BaseModel):
     """BaseModel for a PowerPoint Content Slide."""
 
     title: str
-    content: str
+    content: Union[str, BulletPoints]
     layout: str = "Content with Caption"
     title_font_size: int = 40
     content_font_size: int = 24

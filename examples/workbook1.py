@@ -37,7 +37,7 @@ slides = [
     TitleSlide(title="Christmas Presentation", subtitle="Happy Holidays!"),
     ContentSlide(
         title="Winter Facts",
-        content="1. Snow is white\n2. It's cold\n3. People build snowmen",
+        content=winter_facts,
     ),
     ImageSlide(
         title="Christmas Tree",
