@@ -13,6 +13,8 @@ python = "^3.12"
 pandas = "^2.2.2"
 pydantic = "^2.8.2"
 python-pptx = "^1.0.0"
+python-dotenv = "^1.0.1"
+matplotlib = "^3.9.0"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -27,3 +29,13 @@ mypy = "^1.11.1"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+
+[tool.isort]
+profile = "black"
+line_length = 88
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = false
+ensure_newline_before_comments = true

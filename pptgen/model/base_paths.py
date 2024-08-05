@@ -47,3 +47,19 @@ class BasePaths(BaseModel):
     def image_path(self) -> Path:
         """Image path."""
         return self.data_path / "images"
+
+    def find_image(self, file_name: str) -> str:
+        """Find the image path."""
+        extensions = ["*.png", "*.jpg", "*.jpeg"]
+        # Get the list of all files in the image directory
+        image_files = [f for ext in extensions for f in self.image_path.rglob(ext)]
+
+        if not image_files:
+            raise FileNotFoundError("No images found in the image directory")
+
+        # Find the file name in the list of files
+        for image_file in image_files:
+            if image_file.name == file_name or file_name in image_file.name:
+                return str(image_file.resolve())
+
+        raise FileNotFoundError(f"Could not find {file_name} in the image directory.")
