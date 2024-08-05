@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "powerpoint-autogen"
+version = "0.1.0"
+description = "Auto-generation of microsoft powerpoint presentations"
+authors = ["Ed Powers <ed.a.powers@gmail.com>"]
+readme = "README.md"
+packages = [
+    { include = "pptgen", from = "." },
+]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pandas = "^2.2.2"
+pydantic = "^2.8.2"
+python-pptx = "^1.0.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pip = "^24.2"
+pykernel = "^0.1.6"
+ipykernel = "^6.29.5"
+jupyter = "^1.0.0"
+flake8 = "^7.1.1"
+black = "^24.8.0"
+mypy = "^1.11.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
