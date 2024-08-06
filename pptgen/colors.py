@@ -50,8 +50,11 @@ def apply_text_formatting(
     font.size = Pt(font_size)
 
     # Remove '#' from color string if present
-    color = color.lstrip("#")
-    font.color.rgb = RGBColor.from_string(color)
+    if color:
+        color = color.lstrip("#")
+        font.color.rgb = RGBColor.from_string(color)
+    else:
+        font.color.rgb = RGBColor(0, 0, 0)
 
     font.bold = bold
     font.italic = italic

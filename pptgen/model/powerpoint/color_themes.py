@@ -25,6 +25,8 @@ class ColorMixin(BaseModel):
     accent_gradient_4: Optional[Tuple[str, str]] = None
     accent_gradient_5: Optional[Tuple[str, str]] = None
     accent_gradient_6: Optional[Tuple[str, str]] = None
+    primary_gradient: Optional[Tuple[str, str]] = None  # TODO - remove
+    secondary_gradient: Optional[Tuple[str, str]] = None  # TODO - remove
     background_gradient: Optional[Tuple[str, str]] = None
 
     def apply_colors(self, slide_model: BaseModel) -> None:
@@ -65,6 +67,10 @@ class ThemeColorScheme(ColorMixin):
                 "title_color": "#333333",  # Dark gray for title
                 "subtitle_color": "#666666",  # Medium gray for subtitle
                 "content_color": "#333333",  # Dark gray for content
+                "primary_gradient": (
+                    "#000000",
+                    "#333333",
+                ),  # TODO: remove from pydantic model.
                 "accent_gradient_1": ("#0066CC", "#0080FF"),  # Blue
                 "accent_gradient_2": ("#008080", "#00A3A3"),  # Teal
                 "accent_gradient_3": ("#6B8E23", "#8AB33B"),  # Olive Green
