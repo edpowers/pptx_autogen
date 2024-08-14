@@ -57,9 +57,9 @@ def generate_ppt(
     # Generate slides based on the number of columns
     if len(columns_meta.columns) > 10:
         print("Creating consolidated view")
-        slides = create_consolidated_view(columns_meta, prs, color_scheme)
+        create_consolidated_view(columns_meta, prs, color_scheme)
     else:
-        slides = create_detailed_view(columns_meta, prs, color_scheme)
+        create_detailed_view(columns_meta, prs, color_scheme)
 
     # Create PPTXModel and write to file
     pptx_model = PPTXModel(file_name=output_file, pptx_raw=prs)

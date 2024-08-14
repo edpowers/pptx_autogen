@@ -7,10 +7,7 @@ from pptx import Presentation
 from pptx.enum.text import PP_ALIGN
 from pptx.util import Inches
 
-from pptgen.colors import (
-    apply_background_gradient,
-    apply_text_formatting,
-)
+from pptgen.colors import apply_background_gradient, apply_text_formatting
 from pptgen.model.powerpoint.common import BulletPoints
 from pptgen.model.powerpoint.content_slide import ContentSlide
 from pptgen.model.powerpoint.image_slide import ImageSlide

@@ -1,7 +1,5 @@
 """Pydantic model for an image slide."""
 
-from pathlib import Path
-
 from pydantic import BaseModel
 
 

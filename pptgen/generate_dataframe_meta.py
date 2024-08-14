@@ -8,10 +8,7 @@ import pandas as pd
 from pptx import Presentation, presentation
 from pptx.util import Inches
 
-from pptgen.colors import (
-    apply_background_gradient,
-    apply_text_formatting,
-)
+from pptgen.colors import apply_background_gradient, apply_text_formatting
 from pptgen.model.dataframe_meta import ColumnMeta, ColumnsMeta
 
 

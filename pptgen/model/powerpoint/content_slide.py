@@ -1,9 +1,8 @@
 """Base Model for a Graphic Content Slide."""
 
-from pydantic import BaseModel
-
 from typing import Union
 
+from pydantic import BaseModel
 
 from pptgen.model.powerpoint.common import BulletPoints
 
