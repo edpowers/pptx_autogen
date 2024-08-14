@@ -9,7 +9,7 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.11,<3.13"
 pandas = "^2.2.2"
 pydantic = "^2.8.2"
 python-pptx = "^1.0.0"
