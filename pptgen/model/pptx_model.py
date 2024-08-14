@@ -44,5 +44,12 @@ class PPTXModel(BasePaths):
 
         return pptx_buffer
 
+    def validate_output_exists(self) -> None:
+        """Validate output exists."""
+        if not self.pptx_file.exists():
+            raise FileNotFoundError(f"Output file not found: {self.pptx_file}")
+
+        print(f"Output file created: {self.pptx_file}")
+
     class Config:
         arbitrary_types_allowed = True
