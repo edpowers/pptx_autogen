@@ -2,17 +2,19 @@
 
 # %%
 
-from pptgen.model.color_themes import ThemeColorScheme, ColorTheme
-from pptgen.model.content_slide import ContentSlide
-from pptgen.model.image_slide import ImageSlide
-from pptgen.model.title_slide import TitleSlide
-
-from pptgen.model.base_paths import BasePaths
-from pptgen.model.pptx_model import PPTXModel
+import pprint
+import sys
 
 from pptgen.create_presentation import create_presentation
+from pptgen.model.base_paths import BasePaths
+from pptgen.model.powerpoint.color_themes import ColorTheme, ThemeColorScheme
+from pptgen.model.powerpoint.common import BulletPoint, BulletPoints
+from pptgen.model.powerpoint.content_slide import ContentSlide
+from pptgen.model.powerpoint.image_slide import ImageSlide
+from pptgen.model.pptx_model import PPTXModel
+from pptgen.model.powerpoint.title_slide import TitleSlide
 
-from pptgen.model.common import BulletPoints, BulletPoint
+pprint.pprint(sys.path)
 
 # %%
 
@@ -41,7 +43,7 @@ slides = [
     ),
     ImageSlide(
         title="Christmas Tree",
-        image_path=str(base_paths.image_path.joinpath("christmas_tree.jpg").resolve()),
+        image_path=base_paths.find_image("christmas_tree"),
     ),
 ]
 
@@ -49,7 +51,7 @@ pptx_file = create_presentation(slides, color_scheme)
 
 
 pptx_file_christmas = PPTXModel(
-    file_name="Christmas_Presentation.pptx", pptx=pptx_file.getvalue()
+    file_name="Christmas_Presentation.pptx", pptx_raw=pptx_file
 )
 
 pptx_file_christmas.write_pptx()

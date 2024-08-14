@@ -5,7 +5,7 @@ from pydantic import BaseModel
 from typing import Union
 
 
-from pptgen.model.common import BulletPoints
+from pptgen.model.powerpoint.common import BulletPoints
 
 
 class ContentSlide(BaseModel):
