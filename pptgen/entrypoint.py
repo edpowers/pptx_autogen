@@ -65,4 +65,10 @@ def generate_ppt(
     pptx_model = PPTXModel(file_name=str(output_file), pptx_raw=prs)
     pptx_model.write_pptx()
 
+    # Check that the output file exists and print that the PPTX file was created
+    if output_file.exists():
+        print(f"PPTX file created: {output_file}")
+    else:
+        raise FileNotFoundError(f"Failed to create PPTX file: {output_file}")
+
     return output_file
