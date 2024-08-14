@@ -62,7 +62,7 @@ def generate_ppt(
         create_detailed_view(columns_meta, prs, color_scheme)
 
     # Create PPTXModel and write to file
-    pptx_model = PPTXModel(file_name=output_file, pptx_raw=prs)
+    pptx_model = PPTXModel(file_name=str(output_file), pptx_raw=prs)
     pptx_model.write_pptx()
 
     return output_file
